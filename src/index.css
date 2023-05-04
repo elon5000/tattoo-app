@@ -1,0 +1,7 @@
+body {
+    background: #212121;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
