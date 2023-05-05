@@ -10,9 +10,16 @@ type Props = {}
 
 export default function MainNavBar(props: Props) {
 
-    
-
-    return <nav>
-        Hello Nav
+    return <nav className="flex-between mx-auto w-full">
+        <ul className="flex-between gap-8 text-sm">
+            <li>Home</li>
+            <li>Benefits</li>
+            <li>Our Classes</li>
+            <li>Contact Us</li>
+        </ul>
+        <div className="flex-between gap-8">
+            <button>Login</button>
+            <button>Become a member</button>
+        </div>
     </nav>
 }

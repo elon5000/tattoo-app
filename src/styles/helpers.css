@@ -1,0 +1,7 @@
+.main-layout {
+    @apply w-5/6;
+}
+
+.flex-between {
+    @apply flex items-center justify-between;
+  }
