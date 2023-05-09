@@ -6,16 +6,17 @@ import { Link } from './Link'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 
 
+// * Types
+import { SelectedPage } from '../../shared/types'
+
 type Props = {
-    selectedPage: string
-    setSelectedPage: (value: string) => void
+    selectedPage: SelectedPage
+    setSelectedPage: (value: SelectedPage) => void
 }
 
 export default function MainNavBar(props: Props) {
 
     const { selectedPage, setSelectedPage } = props
-
-    
 
     return <nav className="flex-between mx-auto w-full">
         <ul className="flex-between gap-8 mx-auto w-1/2 text-sm">
