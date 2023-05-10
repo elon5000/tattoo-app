@@ -25,24 +25,37 @@ export default function MainNavBar(props: Props) {
 
     const onToggleModal = (ev: React.MouseEvent<HTMLButtonElement>) => {
         ev.stopPropagation()
-        setIsMainNavOpen(!isMainNavOpen)
+        if (!isAboveMediumScreen) setIsMainNavOpen(!isMainNavOpen)
     }
 
     const MainNavBtnIcon = isMainNavOpen ? XMarkIcon : Bars3Icon
+    const darkScreenClassNameStr = (!isAboveMediumScreen && isMainNavOpen) ?
+        'fixed w-full h-full inset-0 bg-zinc-950/90'
+        : ''
+    const navClassStr = `flex-between ${(!isAboveMediumScreen && isMainNavOpen) ?
+        'flex-col items-end pe-6 h-full absolute w-3/5 bg-white top-0 end-0' : ''} 
+         mx-auto w-full`
+    const navUlClassNameStr = isAboveMediumScreen ? 'flex-between gap-8 mx-auto w-1/2 text-sm'
+        : 'flex-between flex-col gap-8 text-xl'
 
-    return <nav className="flex-between mx-auto w-full">
-        {!isAboveMediumScreen && <button onClick={onToggleModal}>
-            <MainNavBtnIcon className="w-10" />
+    return <div className={darkScreenClassNameStr}>
+        <nav className={navClassStr}>
+            {!isAboveMediumScreen && <button onClick={onToggleModal}>
+                <MainNavBtnIcon className="w-6" />
             </button>}
-        <ul className="flex-between gap-8 mx-auto w-1/2 text-sm">
-            <Link setSelectedPage={setSelectedPage} selectedPage={selectedPage} pageName="home" />
-            <Link setSelectedPage={setSelectedPage} selectedPage={selectedPage} pageName="benefits" />
-            <Link setSelectedPage={setSelectedPage} selectedPage={selectedPage} pageName="our classes" />
-            <Link setSelectedPage={setSelectedPage} selectedPage={selectedPage} pageName="contact us" />
-        </ul>
-        <div className="flex-between gap-8">
-            <button>Login</button>
-            <button>Become a member</button>
-        </div>
-    </nav>
+            {((isMainNavOpen && !isAboveMediumScreen) || isAboveMediumScreen) && <>
+                <ul className={navUlClassNameStr}>
+                    <Link setSelectedPage={setSelectedPage} selectedPage={selectedPage} pageName="home" />
+                    <Link setSelectedPage={setSelectedPage} selectedPage={selectedPage} pageName="benefits" />
+                    <Link setSelectedPage={setSelectedPage} selectedPage={selectedPage} pageName="our classes" />
+                    <Link setSelectedPage={setSelectedPage} selectedPage={selectedPage} pageName="contact us" />
+                </ul>
+                <div className={`flex-between ${(!isAboveMediumScreen && isMainNavOpen) ? 'flex-col text-xl' : ''} gap-8`}>
+                    <button>Login</button>
+                    <button>Become a member</button>
+                </div>
+            </>
+            }
+        </nav>
+    </div>
 }
