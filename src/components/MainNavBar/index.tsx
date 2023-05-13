@@ -1,6 +1,7 @@
 
 // * Cmps
 import { Link } from './Link'
+import ActionButton from '../ActionButton'
 
 // * Hooks
 import useMediaQuery from '@/hooks/useMediaQuery'
@@ -56,8 +57,8 @@ export default function MainNavBar(props: Props) {
                     <Link setSelectedPage={setSelectedPage} selectedPage={selectedPage} pageName="contact us" />
                 </ul>
                 <div className={`flex-between ${(!isAboveMediumScreen && isMainNavOpen) ? 'flex-col text-xl' : ''} gap-8`}>
-                    <button>Login</button>
-                    <button>Become a member</button>
+                <ActionButton value={SelectedPage.Login} children="Login" setSelectedPage={setSelectedPage} />
+                <ActionButton value={SelectedPage.Signup} children="Become a member" setSelectedPage={setSelectedPage} />
                 </div>
             </>
             }
