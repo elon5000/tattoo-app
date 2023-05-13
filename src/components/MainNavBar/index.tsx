@@ -23,7 +23,7 @@ export default function MainNavBar(props: Props) {
     const { selectedPage, isMainNavOpen, setSelectedPage, setIsMainNavOpen } = props
     const isAboveMediumScreen = useMediaQuery('(min-width: 1060px)')
 
-    const onToggleModal = (ev: React.MouseEvent<HTMLButtonElement>) => {
+    const onToggleModal = (ev: React.MouseEvent<HTMLElement>) => {
         ev.stopPropagation()
         if (!isAboveMediumScreen) setIsMainNavOpen(!isMainNavOpen)
     }
@@ -33,15 +33,16 @@ export default function MainNavBar(props: Props) {
         'fixed w-full h-full inset-0 bg-zinc-950/90'
         : ''
     const navClassStr = `flex-between ${(!isAboveMediumScreen && isMainNavOpen) ?
-        'flex-col items-end pe-6 h-full absolute w-3/5 bg-white top-0 end-0' : ''} 
-         mx-auto w-full`
+        'flex-col h-full absolute w-3/5 bg-white top-0 end-0' : 'mx-auto w-full'}`
     const navUlClassNameStr = isAboveMediumScreen ? 'flex-between gap-8 mx-auto w-1/2 text-sm'
         : 'flex-between flex-col gap-8 text-xl'
 
-    return <div className={darkScreenClassNameStr}>
+        const toggleModalBtnClassStr = `w-14 p-2 ${isMainNavOpen ? 'absolute start-0' : ''}`
+
+    return <div onClick={onToggleModal} className={darkScreenClassNameStr}>
         <nav className={navClassStr}>
-            {!isAboveMediumScreen && <button onClick={onToggleModal}>
-                <MainNavBtnIcon className="w-6" />
+            {!isAboveMediumScreen && <button className={toggleModalBtnClassStr} onClick={onToggleModal}>
+                <MainNavBtnIcon />
             </button>}
             {((isMainNavOpen && !isAboveMediumScreen) || isAboveMediumScreen) && <>
                 <ul className={navUlClassNameStr}>
