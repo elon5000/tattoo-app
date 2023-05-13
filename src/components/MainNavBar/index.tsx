@@ -30,18 +30,22 @@ export default function MainNavBar(props: Props) {
 
     const MainNavBtnIcon = isMainNavOpen ? XMarkIcon : Bars3Icon
     const darkScreenClassNameStr = (!isAboveMediumScreen && isMainNavOpen) ?
-        'fixed w-full h-full inset-0 bg-zinc-950/90'
-        : ''
+        'fixed w-full h-full inset-0 bg-zinc-950/90 cursor-pointer'
+        : 'relative bg-transparent flex-1'
     const navClassStr = `flex-between ${(!isAboveMediumScreen && isMainNavOpen) ?
-        'flex-col h-full absolute w-3/5 bg-white top-0 end-0' : 'mx-auto w-full'}`
+        'py-12 flex-col h-full absolute w-3/5 bg-white top-0 end-0 animate-slide-in-left'
+        : 'mx-auto w-full'}`
     const navUlClassNameStr = isAboveMediumScreen ? 'flex-between gap-8 mx-auto w-1/2 text-sm'
         : 'flex-between flex-col gap-8 text-xl'
 
-        const toggleModalBtnClassStr = `w-14 p-2 ${isMainNavOpen ? 'absolute start-0' : ''}`
+    const toggleModalBtnClassStr = `w-12 p-2 absolute ${isMainNavOpen ? 'start-0' : 'end-0 rounded-full bg-primary-500 text-primary-100 hover:bg-zinc-950/90'}`
 
     return <div onClick={onToggleModal} className={darkScreenClassNameStr}>
         <nav className={navClassStr}>
-            {!isAboveMediumScreen && <button className={toggleModalBtnClassStr} onClick={onToggleModal}>
+            {!isAboveMediumScreen && <button
+            title="Toggle navigation bar"
+                className={toggleModalBtnClassStr}
+                onClick={onToggleModal}>
                 <MainNavBtnIcon />
             </button>}
             {((isMainNavOpen && !isAboveMediumScreen) || isAboveMediumScreen) && <>

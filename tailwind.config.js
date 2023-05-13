@@ -11,11 +11,11 @@ export default {
         'gray-50': '#EFE6E6',
         'gray-100': '#DFCCCC',
         'gray-500': '#5E0000',
-        'primary-100': '#FFE1E0',
-        'primary-300': '#FFA6A3',
-        'primary-500': '#FF6B66',
-        'secondary-400': '#FFCD58',
-        'secondary-500': '#FFC132',
+        'primary-100': '#F4EEE0',
+        'primary-300': '#6D5D6E',
+        'primary-500': '#393646',
+        'secondary-400': '#50577A',
+        'secondary-500': '#404258',
       },
       backgroundImage: (theme) => ({
         'gradient-yellowred': 'linear-gradient(90deg, #FF616A 0%, #FFC837 100%)',
@@ -31,7 +31,21 @@ export default {
         abstractwaves: 'url("./assets/AbstractWaves.png")',
         sparkles: 'url("./assets/Sparkles.png")',
         circles: 'url("./assets/Circles.png")',
-      }
+      },
+      animation: {
+        'slide-in-left': 'slide-in-left 0.5s forwards',
+        'slide-out-right': 'slide-out-right 0.5s forwards',
+      },
+      keyframes: {
+        'slide-in-left': {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+        'slide-out-right': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+      },
     },
     // * Media queries
     screens: {

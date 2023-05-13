@@ -16,6 +16,7 @@ export function Link({ pageName, selectedPage, setSelectedPage }: Props) {
 
     return <AnchorLink
         href={'#/' + pageRouteStr}
+        title={`Go to ${pageName}`}
         onClick={() => setSelectedPage(pageRouteStr)}
         className={`${fontStyle} transition duration-100 hover:text-primary-300 capitalize cursor-pointer`}>
         {pageName}
