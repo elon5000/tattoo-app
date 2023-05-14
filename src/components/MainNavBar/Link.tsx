@@ -16,7 +16,7 @@ export function Link({ pageName, selectedPage, setSelectedPage }: Props) {
     const linkStyles = `${fontStyle} w-full text-center py-2 transition duration-100 hover:text-primary-500 capitalize cursor-pointer`
 
     return <AnchorLink
-        href={'#/' + pageRouteStr}
+        href={'#' + pageRouteStr}
         title={`Go to ${pageName}`}
         onClick={() => setSelectedPage(pageRouteStr)}
         className={linkStyles}>

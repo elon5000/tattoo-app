@@ -41,10 +41,10 @@ export default function MainNavBar({ selectedPage, isMainNavOpen, setSelectedPag
         'fixed w-full h-full inset-0 bg-zinc-950/90 cursor-pointer'
         : 'relative bg-transparent flex-1'
     const navStyles = `flex-between cursor-default ${(!isAboveMediumScreen && isMainNavOpen) ?
-        'py-[32px] flex-col h-full absolute w-3/5 bg-primary-100 top-0 end-0 animate-slide-in-left'
+        'justify-around flex-col h-full absolute w-3/5 bg-primary-100 top-0 end-0 animate-slide-in-left'
         : 'mx-auto w-full justify-end'}`
     const navUlStyles = isAboveMediumScreen ? 'flex-between gap-8 mx-auto w-1/2 text-sm'
-        : 'flex-between flex-col max-h-[320px] gap-8 flex-1 text-xl'
+        : 'flex-between flex-col max-h-[400px] gap-8 flex-1 text-xl'
 
     const toggleModalBtnStyles = `w-12 p-2 hover:text-primary-300 ${isMainNavOpen ? 'self-start' : 'justify-self-end rounded-full bg-primary-500 text-primary-100 hover:bg-zinc-950/90'}`
 
