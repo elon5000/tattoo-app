@@ -7,15 +7,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        'gray-20': '#F8F4EB',
-        'gray-50': '#EFE6E6',
-        'gray-100': '#DFCCCC',
-        'gray-500': '#5E0000',
-        'primary-100': '#F4EEE0',
-        'primary-300': '#6D5D6E',
-        'primary-500': '#393646',
-        'secondary-400': '#50577A',
-        'secondary-500': '#404258',
+        'gray-20': '#E9E9E9',
+        'gray-50': '#C9CCD1',
+        'gray-100': '#B1B1B1',
+        'gray-500': '#474554',
+        'primary-100': '#F6F1E6',
+        'primary-300': '#B8AA87',
+        'primary-500': '#4C4637',
+        'secondary-400': '#E0D4B7',
+        'secondary-500': '#3C3830',
       },
       backgroundImage: (theme) => ({
         'gradient-yellowred': 'linear-gradient(90deg, #FF616A 0%, #FFC837 100%)',
@@ -33,8 +33,8 @@ export default {
         circles: 'url("./assets/Circles.png")',
       },
       animation: {
-        'slide-in-left': 'slide-in-left 0.5s forwards',
-        'slide-out-right': 'slide-out-right 0.5s forwards',
+        'slide-in-left': 'slide-in-left 0.3s forwards',
+        'slide-out-right': 'slide-out-right 0.3s forwards',
       },
       keyframes: {
         'slide-in-left': {

@@ -11,7 +11,7 @@ type Props = {
     setSelectedPage: (value: SelectedPage) => void
 }
 
-const anchorLinkStyles = 'rounded-md cursor-pointer bg-secondary-400 hover:bg-secondary-500 px-8 py-2 text-primary-100 text-center'
+const anchorLinkStyles = 'rounded-md cursor-pointer bg-primary-500 hover:bg-secondary-500 px-8 py-2 text-primary-100 text-center'
 
 
 export default function ActionButton({ value, children, setSelectedPage }: Props) {

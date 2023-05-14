@@ -21,7 +21,7 @@ export default function MainHeader(props: Props) {
 
     return <header className="fixed w-full top-0 z-30">
         <div className="main-layout flex-between gap-16 mx-auto py-6">
-            <img className="w-24" src={Logo} alt="Logo" />
+            <img title="Logo" className="w-24" src={Logo} alt="Logo" />
             <MainNavBar
                 selectedPage={selectedPage}
                 isMainNavOpen={isMainNavOpen}
