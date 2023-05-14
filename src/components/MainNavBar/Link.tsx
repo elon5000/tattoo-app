@@ -13,12 +13,13 @@ export function Link({ pageName, selectedPage, setSelectedPage }: Props) {
 
     const pageRouteStr = pageName.replace(/ /g, "") as SelectedPage
     const fontStyle = (selectedPage === pageName) ? 'text-gray-500' : 'text-gray-100'
+    const linkStyles = `${fontStyle} w-full text-center py-2 transition duration-100 hover:text-primary-500 capitalize cursor-pointer`
 
     return <AnchorLink
         href={'#/' + pageRouteStr}
         title={`Go to ${pageName}`}
         onClick={() => setSelectedPage(pageRouteStr)}
-        className={`${fontStyle} transition duration-100 hover:text-primary-500 capitalize cursor-pointer`}>
+        className={linkStyles}>
         {pageName}
     </AnchorLink>
 }
