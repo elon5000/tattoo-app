@@ -19,7 +19,7 @@ type Props = {
 
 export default function MainHeader({ isTopOfPage, selectedPage, isMainNavOpen, setSelectedPage, setIsMainNavOpen }: Props) {
     
-    const headerStyles = `fixed w-full top-0 z-30 ${isTopOfPage ? '' : 'bg-primary-300'}`
+    const headerStyles = `fixed w-full top-0 z-30 ${isTopOfPage ? '' : 'bg-secondary-400'}`
     
     return <header className={headerStyles}>
         <div className="main-layout flex-between gap-16 mx-auto py-6">
