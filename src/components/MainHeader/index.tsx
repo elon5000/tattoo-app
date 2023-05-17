@@ -18,13 +18,14 @@ type Props = {
 
 
 export default function MainHeader({ isTopOfPage, selectedPage, isMainNavOpen, setSelectedPage, setIsMainNavOpen }: Props) {
-    
-    const headerStyles = `fixed w-full top-0 z-30 ${isTopOfPage ? '' : 'bg-secondary-400'}`
-    
+
+    const headerStyles = `fixed w-full top-0 z-30 ${isTopOfPage ? '' : 'bg-gray-300-trans'}`
+
     return <header className={headerStyles}>
-        <div className="main-layout flex-between gap-16 mx-auto py-6">
+        <div className="main-layout flex-between gap-16 mx-auto py-2">
             <img title="Logo" className="w-24" src={Logo} alt="Logo" />
             <MainNavBar
+                isTopOfPage={isTopOfPage}
                 selectedPage={selectedPage}
                 isMainNavOpen={isMainNavOpen}
                 setSelectedPage={setSelectedPage}

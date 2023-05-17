@@ -14,13 +14,14 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 import { SelectedPage } from '../../shared/types'
 
 type Props = {
+    isTopOfPage: boolean
     isMainNavOpen: boolean
     selectedPage: SelectedPage
     setIsMainNavOpen: (value: boolean) => void
     setSelectedPage: (value: SelectedPage) => void
 }
 
-export default function MainNavBar({ selectedPage, isMainNavOpen, setSelectedPage, setIsMainNavOpen }: Props) {
+export default function MainNavBar({ selectedPage, isMainNavOpen, isTopOfPage, setSelectedPage, setIsMainNavOpen }: Props) {
 
     const navRef = useRef<HTMLElement | null>(null)
     const isAboveMediumScreen = useMediaQuery('(min-width: 1060px)')
@@ -46,7 +47,8 @@ export default function MainNavBar({ selectedPage, isMainNavOpen, setSelectedPag
     const navUlStyles = isAboveMediumScreen ? 'flex-between gap-8 mx-auto w-1/2 text-sm'
         : 'flex-between flex-col max-h-[400px] gap-8 flex-1 text-xl'
 
-    const toggleModalBtnStyles = `w-12 p-2 hover:text-primary-300 ${isMainNavOpen ? 'self-start' : 'justify-self-end rounded-full bg-primary-500 text-primary-100 hover:bg-zinc-950/90'}`
+    const toggleModalBtnStyles = `w-12 p-2 hover:text-primary-300 ${isMainNavOpen ? 'self-start' : 'justify-self-end rounded-full bg-primary-500 text-primary-100 hover:bg-zinc-950/90'}
+    ${(!isTopOfPage && !isMainNavOpen) ? 'border-2 border-solid border-white' : ''}`
 
     return <div onClick={onToggleModal} className={darkScreenStyles}>
         <nav ref={navRef} className={navStyles}>

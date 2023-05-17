@@ -21,7 +21,8 @@ export default function Home({ setSelectedPage, selectedPage }: Props) {
 
     const isAboveMediumScreens = useMediaQuery('(min-width: 1060px)')
 
-    const sectionStyles = `flex main-layout mx-auto gap-16 bg-gray- pt-36 pb-10 md:h-full md:pb-0 ${isAboveMediumScreens ? 'flex-row' : 'flex-col'}`
+    const sectionStyles = `flex main-layout mx-auto gap-16 h-fit pt-36 pb-10 md:h-full md:pb-0 ${isAboveMediumScreens ? 'flex-row' : 'flex-col'}`
+    const imgStyles = `object-contain ${isAboveMediumScreens ? 'max-w-[600px]' : 'w-full'}`
     return <section
         className={sectionStyles}
         id="home">
@@ -36,6 +37,6 @@ export default function Home({ setSelectedPage, selectedPage }: Props) {
                 </div>
             </div>
         </div>
-        <img src={HomePageGraphic} alt="Homepage" />
+        <img src={HomePageGraphic} className={imgStyles} alt="Homepage" />
     </section>
 }
