@@ -25,7 +25,7 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  return <div className="app bg-gray-20 h-fit">
+  return <div className="app h-fit">
     <MainHeader
       isTopOfPage={isTopOfPage}
       selectedPage={selectedPage}

@@ -2,9 +2,6 @@
 // * Cmps
 import MainNavBar from '../MainNavBar'
 
-// * Images
-import Logo from '@/assets/Logo.png'
-
 // * Types
 import { SelectedPage } from '@/shared/types'
 
@@ -20,10 +17,11 @@ type Props = {
 export default function MainHeader({ isTopOfPage, selectedPage, isMainNavOpen, setSelectedPage, setIsMainNavOpen }: Props) {
 
     const headerStyles = `fixed w-full top-0 z-30 ${isTopOfPage ? '' : 'bg-gray-300-trans'}`
+    const h1LogoStyles = `text-xl font-bold uppercase ${!isTopOfPage ? 'text-gray-20' : ''}`
 
     return <header className={headerStyles}>
-        <div className="main-layout flex-between gap-16 mx-auto py-2">
-            <img title="Logo" className="w-24" src={Logo} alt="Logo" />
+        <div className="main-layout items-center flex-between gap-16 mx-auto py-6">
+            <h1 title="Logo" className={h1LogoStyles}>Koolkat</h1>
             <MainNavBar
                 isTopOfPage={isTopOfPage}
                 selectedPage={selectedPage}
