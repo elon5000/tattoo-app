@@ -21,7 +21,7 @@ export default function MainHeader({ isTopOfPage, selectedPage, isMainNavOpen, s
 
     return <header className={headerStyles}>
         <div className="main-layout items-center flex-between gap-16 mx-auto py-6">
-            <h1 title="Logo" className={h1LogoStyles}>Koolkat</h1>
+            <h1 title="Koolkat tattoos" className={h1LogoStyles}>Koolkat</h1>
             <MainNavBar
                 isTopOfPage={isTopOfPage}
                 selectedPage={selectedPage}

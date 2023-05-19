@@ -7,5 +7,6 @@
   }
 
 .logo {
+    cursor: default;
     letter-spacing: 1px;
 }  
