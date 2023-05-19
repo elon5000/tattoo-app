@@ -5,3 +5,7 @@
 .flex-between {
     @apply flex items-center justify-between;
   }
+
+.logo {
+    letter-spacing: 1px;
+}  
