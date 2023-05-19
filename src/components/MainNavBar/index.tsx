@@ -1,7 +1,6 @@
 
 // * Cmps
 import { Link } from './Link'
-import ActionButton from '../ActionButton'
 
 // * Hooks
 import { useRef } from 'react'
@@ -31,7 +30,7 @@ export default function MainNavBar({ selectedPage, isMainNavOpen, isTopOfPage, s
         if (isMainNavOpen && navRef.current) {
             navRef.current.classList.add('animate-slide-out-right')
         }
-        if (!isAboveMediumScreen) {
+        if (!isAboveMediumScreen && (typeof setIsMainNavOpen === 'function')) {
             const delay = isMainNavOpen ? 300 : 0
             setTimeout(() => setIsMainNavOpen(!isMainNavOpen), delay)
         }

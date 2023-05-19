@@ -21,13 +21,14 @@ export default function Home({ setSelectedPage, selectedPage }: Props) {
 
     const isAboveMediumScreens = useMediaQuery('(min-width: 1060px)')
 
-    const sectionStyles = `flex main-layout mx-auto gap-16 h-fit mt-32 pb-10 md:h-full md:pb-0 ${isAboveMediumScreens ? 'flex-row' : 'flex-col'}`
+    const sectionStyles = `flex main-layout mx-auto gap-12 h-fit pb-10 md:h-full md:pb-0 ${isAboveMediumScreens ? 'flex-row mt-36' : 'flex-col mt-28'}`
+    const h1Styles = 'md:before:content-["KoolKat_Tattoos"] before:absolute before:-top-16 before:-left-10 cursor-default text-7xl before:text-9xl before:text-gray-20-trans before:z-[-1] mb-2 uppercase'
     const imgStyles = `object-contain ${isAboveMediumScreens ? 'max-w-[600px]' : 'w-full'}`
     return <section
         className={sectionStyles}
         id="home">
-        <div>
-            <h1 className="cursor-default text-6xl mb-2 uppercase">KoolKat Tattoos</h1>
+        <div className="relative">
+            <h1 className={h1Styles}>KoolKat Tattoos</h1>
             <h3 className="cursor-default text-4xl mb-6">Old school steady hand.</h3>
             <p className="cursor-default font-montserrat mb-8">Welcome to Koolkat, where ink drips old-school and style bleeds cool. Strap in and let our tattoos do the loud talking.</p>
             <div className='flex w-full max-w-[230px] justify-between items-center'>

@@ -34,8 +34,8 @@ export default function App() {
       setIsMainNavOpen={setIsMainNavOpen}
     />
     <Home
-    selectedPage={selectedPage} 
-    setSelectedPage={setSelectedPage}
+      selectedPage={selectedPage}
+      setSelectedPage={setSelectedPage}
     />
   </div>
 }
