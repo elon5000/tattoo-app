@@ -14,7 +14,7 @@ export default {
         'gray-50': '#C9CCD1',
         'gray-100': '#B1B1B1',
         'gray-200': '#585757',
-        'gray-20-trans': '#43413d2b',
+        'gray-20-trans': '#43413d17',
         'gray-100-trans': '#43413d4a',
         'gray-300-trans': '#43413df2',
         'gray-500-trans': '#1f1e1ef5',

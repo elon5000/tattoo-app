@@ -8,4 +8,9 @@ export enum SelectedPage {
   Login = 'login',
 }
 
+export type Benefit = {
+  svg: React.ReactElement
+  title: string
+  description: string
+}
 
