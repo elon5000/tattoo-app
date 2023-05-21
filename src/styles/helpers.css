@@ -7,7 +7,7 @@
 }
 
 .header-title {
-  @apply uppercase font-montserrat font-extrabold text-4xl my-4
+  @apply uppercase font-montserrat font-extrabold text-4xl mb-4
 }
 
 .circle-icon {

@@ -39,7 +39,6 @@ export default function App() {
       setSelectedPage={setSelectedPage}
     />
     <Benefits
-      selectedPage={selectedPage}
       setSelectedPage={setSelectedPage}
     />
   </div>
