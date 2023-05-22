@@ -1,6 +1,10 @@
 
 // * Components
 import BenefitCard from './BenefitCard'
+import ActionButton from '../ActionButton'
+
+// * Images
+import BenefitsPageGraphic from '@/assets/BenefitsPageGraphic.png'
 
 
 // * Modules
@@ -42,6 +46,7 @@ export default function Benefits({ setSelectedPage }: Props) {
         onViewportEnter={() => { setSelectedPage(SelectedPage.Benefits) }}
     >
         <motion.div
+            className="cursor-default"
             initial="hidden"
             whileInView="visible"
             transition={{ duration: 0.5 }}
@@ -52,9 +57,34 @@ export default function Benefits({ setSelectedPage }: Props) {
             }}>
             <h3 className="header-title">More than just a tattoo</h3>
             <p className='font-bold mb-8 text-lg'>Koolkat Tattoo Shop offers versatile tattoo services. Choose a custom design, pick from our pre-made flashes, or bring your own idea. With international acclaim and vast experience, particularly in Europe, Koolkat ensures your unique vision comes to life on your skin.</p>
-            <ul className="flex flex-col md:flex-row gap-8">
+            <ul className="flex flex-col md:flex-row gap-8 mb-12">
                 {benefits.map((benefit, idx) => <BenefitCard key={idx} benefit={benefit} />)}
             </ul>
+        </motion.div>
+
+        <motion.div
+        className="flex-between flex-col gap-12 md:flex-row"
+        >
+            <img
+            className="w-full max-w-[480px] md:max-w-[50%]" 
+            src={BenefitsPageGraphic}
+            alt="Benefits graphics" />
+            <div className="flex flex-col gap-6">
+                <h3 className="font-extrabold uppercase text-3xl">
+                    Hundreds of happy customers getting <span className="text-red-100">inked</span>.
+                </h3>
+                <p className="font-bold text-lg">
+                    Embrace the benefits of choosing Koolkat's Tattoo Shop. Revel in the fusion of traditional tattoos and edgy street art, guided by Koolkat's experienced hand. With a legacy of hundreds of satisfied customers, your trust in us turns into bold, unique, and inspiring ink stories. Here, we don't just ink skin - we honor your journey. Dive into the Koolkat experience, where our customer is the canvas of our artistry!
+                </p>
+                <div className="py-2">
+                    <ActionButton
+                        title="Contact Us"
+                        children="Schedule now"
+                        value={SelectedPage.ContactUs}
+                        setSelectedPage={setSelectedPage}
+                    />
+                </div>
+            </div>
         </motion.div>
     </motion.section>
 }
