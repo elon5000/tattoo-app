@@ -4,6 +4,9 @@ import BenefitCard from './BenefitCard'
 import ActionButton from '../ActionButton'
 
 // * Images
+import Rose from '@/assets/Rose.png'
+import Snake from '@/assets/Snake.png'
+import Anchor from '@/assets/Anchor.png'
 import BenefitsPageGraphic from '@/assets/BenefitsPageGraphic.png'
 
 
@@ -57,32 +60,44 @@ export default function Benefits({ setSelectedPage }: Props) {
             }}>
             <h3 className="header-title">More than just a tattoo</h3>
             <p className='font-bold mb-8 text-lg'>Koolkat Tattoo Shop offers versatile tattoo services. Choose a custom design, pick from our pre-made flashes, or bring your own idea. With international acclaim and vast experience, particularly in Europe, Koolkat ensures your unique vision comes to life on your skin.</p>
-            <ul className="flex flex-col md:flex-row gap-8 mb-12">
+            <ul className="flex flex-col md:flex-row gap-8 mb-16">
                 {benefits.map((benefit, idx) => <BenefitCard key={idx} benefit={benefit} />)}
             </ul>
         </motion.div>
 
         <motion.div
-        className="flex-between flex-col gap-12 md:flex-row"
+            className="flex-between flex-col gap-12 md:flex-row"
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true, amount: 0.1 }}
+            variants={{
+                hidden: { opacity: 0, x: -60 },
+                visible: { opacity: 1, x: 0 }
+            }}
         >
             <img
-            className="w-full max-w-[480px] md:max-w-[50%]" 
-            src={BenefitsPageGraphic}
-            alt="Benefits graphics" />
-            <div className="flex flex-col gap-6">
-                <h3 className="font-extrabold uppercase text-3xl">
-                    Hundreds of happy customers getting <span className="text-red-100">inked</span>.
+                className="w-full max-w-[480px] h-fit md:max-w-[50%]"
+                src={Rose}
+                alt="Benefits graphics" />
+            <div className="flex flex-col gap-10">
+                <div className="flex flex-col gap-6">
+                <h3 className="relative font-extrabold uppercase text-3xl cursor-default">
+                    Hundreds of customers getting <span className="text-red-100">inked</span>.
+                    <img className="absolute bottom-[60%] hidden md:block left-12 rotate-90 max-w-[2.6vw]" src={Snake} alt="Flames graphics" />
                 </h3>
-                <p className="font-bold text-lg">
+                <p className="font-bold text-lg cursor-default">
                     Embrace the benefits of choosing Koolkat's Tattoo Shop. Revel in the fusion of traditional tattoos and edgy street art, guided by Koolkat's experienced hand. With a legacy of hundreds of satisfied customers, your trust in us turns into bold, unique, and inspiring ink stories. Here, we don't just ink skin - we honor your journey. Dive into the Koolkat experience, where our customer is the canvas of our artistry!
                 </p>
-                <div className="py-2">
+                </div>
+                <div className="relative w-fit py-2">
                     <ActionButton
                         title="Contact Us"
                         children="Schedule now"
                         value={SelectedPage.ContactUs}
                         setSelectedPage={setSelectedPage}
                     />
+                    {/* <img src={Anchor} className="absolute -top-[70%] left-[140%] max-w-[38%]" alt="Finger graphic" /> */}
                 </div>
             </div>
         </motion.div>

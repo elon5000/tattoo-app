@@ -41,7 +41,7 @@ export default function MainNavBar({ selectedPage, isMainNavOpen, isTopOfPage, s
         'fixed w-full h-full inset-0 bg-zinc-950/90 cursor-pointer'
         : 'relative bg-transparent flex-1'
     const navStyles = `flex-between cursor-default ${(!isAboveMediumScreen && isMainNavOpen) ?
-        'justify-start flex-col h-full absolute w-3/5 bg-primary-100 top-0 end-0 animate-slide-in-left'
+        'justify-start flex-col h-full absolute w-3/5 bg-gray-20 top-0 end-0 animate-slide-in-left'
         : 'mx-auto w-full justify-end justify-self-end'}`
     const navUlStyles = isAboveMediumScreen ? 'flex-between gap-8 flex-[0.8] text-sm'
         : 'flex-between flex-col max-h-[400px] gap-8 flex-1 text-xl'

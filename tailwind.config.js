@@ -24,7 +24,8 @@ export default {
         'primary-500': '#34322f',
         'secondary-400': '#E0D4B7',
         'secondary-500': '#3C3830',
-        'red-100': '#ed7a7a',
+        // 'red-100': '#ed7a7a',
+        'red-100': '#b7003d',
       },
       backgroundImage: (theme) => ({
         'gradient-yellowred': 'linear-gradient(90deg, #FF616A 0%, #FFC837 100%)',
