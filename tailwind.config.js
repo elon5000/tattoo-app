@@ -26,6 +26,7 @@ export default {
         'secondary-500': '#3C3830',
         // 'red-100': '#ed7a7a',
         'red-100': '#b7003d',
+        // 'red-100': '#be3838',
       },
       backgroundImage: (theme) => ({
         'gradient-yellowred': 'linear-gradient(90deg, #FF616A 0%, #FFC837 100%)',

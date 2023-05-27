@@ -25,7 +25,7 @@ export default function BenefitCard({ benefit }: Props) {
         }}
     >
         {benefit.svg}
-        <h5 className="font-extrabold mb-4 text-xl">{benefit.title}</h5>
+        <h5 className="font-extrabold mb-4 text-xl text-red-100">{benefit.title}</h5>
         <p className="text-lg">{benefit.description}</p>
     </motion.div>
 }

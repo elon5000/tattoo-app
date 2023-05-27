@@ -46,7 +46,7 @@ export default function MainNavBar({ selectedPage, isMainNavOpen, isTopOfPage, s
     const navUlStyles = isAboveMediumScreen ? 'flex-between gap-8 flex-[0.8] text-sm'
         : 'flex-between flex-col max-h-[400px] gap-8 flex-1 text-xl'
 
-    const toggleModalBtnStyles = `w-12 p-2 hover:text-primary-300 ${isMainNavOpen ? 'self-start my-10' : 'justify-self-end rounded-full bg-primary-500 text-primary-100 hover:bg-zinc-950/90'}
+    const toggleModalBtnStyles = `w-12 p-2 hover:text-gray-100 ${isMainNavOpen ? 'self-start my-10' : 'justify-self-end rounded-full bg-primary-500 text-primary-100 hover:bg-zinc-950/90'}
     ${(!isTopOfPage && !isMainNavOpen) ? 'border-2 border-solid border-white' : ''}`
 
     return <div onClick={onToggleModal} className={darkScreenStyles}>
