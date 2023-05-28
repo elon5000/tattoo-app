@@ -6,7 +6,7 @@ import ActionButton from '../ActionButton'
 // * Images
 import Rose from '@/assets/Rose.png'
 import Snake from '@/assets/Snake.png'
-import DaggerBlack from '@/assets/DaggerBlack.png'
+import Mom from '@/assets/Mom.png'
 
 // * Modules
 import { motion } from 'framer-motion'
@@ -43,7 +43,7 @@ export default function Benefits({ setSelectedPage }: Props) {
 
     return <motion.section
         id="benefits"
-        className="main-layout min-h-full py-6"
+        className="card"
         onViewportEnter={() => { setSelectedPage(SelectedPage.Benefits) }}
     >
         <motion.div
@@ -57,7 +57,7 @@ export default function Benefits({ setSelectedPage }: Props) {
                 visible: { opacity: 1, x: 0 }
             }}>
             <h3 className="header-title">More than just a tattoo</h3>
-            <p className='font-bold mb-8 text-lg'>Koolkat Tattoo Shop offers versatile tattoo services. Choose a custom design, pick from our pre-made flashes, or bring your own idea. With international acclaim and vast experience, particularly in Europe, Koolkat ensures your unique vision comes to life on your skin.</p>
+            <p className="card-paragraph">Koolkat Tattoo Shop offers versatile tattoo services. Choose a custom design, pick from our pre-made flashes, or bring your own idea. With international acclaim and vast experience, particularly in Europe, Koolkat ensures your unique vision comes to life on your skin.</p>
             <ul className="flex flex-col md:flex-row gap-8 mb-16">
                 {benefits.map((benefit, idx) => <BenefitCard key={idx} benefit={benefit} />)}
             </ul>
@@ -82,22 +82,22 @@ export default function Benefits({ setSelectedPage }: Props) {
                 <div className="flex flex-col gap-6">
                     <h3 className="relative font-extrabold uppercase text-3xl cursor-default">
                         Hundreds of customers getting <span className="text-red-100">inked</span>.
-                        <img className="absolute bottom-[60%] hidden md:block left-12 rotate-90 max-w-[2.6vw]" src={Snake} alt="Flames graphics" />
+                        <img className="absolute bottom-[64%] hidden md:block left-12 rotate-90 max-w-[2.2vw]" src={Snake} alt="Snake graphics" />
                     </h3>
                     <p className="font-bold text-lg cursor-default">
                         Embrace the benefits of choosing Koolkat's Tattoo Shop. Revel in the fusion of traditional tattoos and edgy street art, guided by Koolkat's experienced hand. With a legacy of hundreds of satisfied customers, your trust in us turns into bold, unique, and inspiring ink stories. Here, we don't just ink skin - we honor your journey. Dive into the Koolkat experience, where our customer is the canvas of our artistry!
                     </p>
                 </div>
-                <motion.div 
-                className="relative w-fit py-2"
-                initial="hidden"
-                whileInView="visible"
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true, amount: 0.1 }}
-                variants={{
-                    hidden: { opacity: 0, x: -60 },
-                    visible: { opacity: 1, x: 0 }
-                }}
+                <motion.div
+                    className="relative w-fit py-2"
+                    initial="hidden"
+                    whileInView="visible"
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true, amount: 0.1 }}
+                    variants={{
+                        hidden: { opacity: 0, x: -60 },
+                        visible: { opacity: 1, x: 0 }
+                    }}
                 >
                     <ActionButton
                         title="Contact Us"
@@ -105,7 +105,7 @@ export default function Benefits({ setSelectedPage }: Props) {
                         value={SelectedPage.ContactUs}
                         setSelectedPage={setSelectedPage}
                     />
-                    <img src={DaggerBlack} className="absolute -top-[90%] left-[120%] rotate-45 max-w-[64%]" alt="Finger graphic" />
+                    <img src={Mom} className="absolute -top-[60%] left-[116%] max-w-[68%]" alt="Dagger graphic" />
                 </motion.div>
             </div>
         </motion.div>

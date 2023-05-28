@@ -7,11 +7,23 @@
 }
 
 .header-title {
-  @apply uppercase font-montserrat font-extrabold text-4xl mb-4
+  @apply uppercase font-montserrat font-extrabold text-4xl mb-4;
 }
 
 .circle-icon {
-  @apply w-14 rounded-full p-3 mb-4 text-gray-20 bg-gray-500-trans border-2 border-solid border-gray-100
+  @apply w-14 rounded-full p-3 mb-4 text-gray-20 bg-gray-500-trans border-2 border-solid border-gray-100;
+}
+
+.card {
+  @apply main-layout min-h-full py-6;
+}
+
+.card-title {
+  @apply font-extrabold uppercase text-3xl cursor-default;
+}
+
+.card-paragraph {
+  @apply font-bold mb-8 text-lg;
 }
 
 .logo {

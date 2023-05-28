@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 
 // * Cmps
 import Home from '@/components/Home'
+import Flashes from '@/components/Flashes'
 import Benefits from '@/components/Benefits'
 import MainHeader from '@/components/MainHeader'
 
@@ -41,6 +42,7 @@ export default function App() {
     <Benefits
       setSelectedPage={setSelectedPage}
     />
+    <Flashes />
   </div>
 }
 
