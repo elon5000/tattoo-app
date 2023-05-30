@@ -5,12 +5,19 @@ import ImgGallery from '../ImgGallery'
 // * Modules
 import { motion } from 'framer-motion'
 
+// * Types
+import { SelectedPage } from '@/shared/types'
+
 // * Assets
 import Sailor from '@/assets/Sailor.png'
 import HomePageGraphic from '@/assets/HomePageGraphic.png'
 
+type Props = {
+    setSelectedPage: (value: SelectedPage) => void
+}
 
-export default function Portfolio() {
+
+export default function Portfolio({ setSelectedPage } : Props) {
 
     const imgs: string[] = [Sailor, HomePageGraphic, Sailor, HomePageGraphic, Sailor, HomePageGraphic, Sailor, HomePageGraphic]
 
@@ -19,6 +26,7 @@ export default function Portfolio() {
             className="main-layout flex flex-col gap-6 text-gray-20"
             initial="hidden"
             whileInView="visible"
+            onViewportEnter={() => { setSelectedPage(SelectedPage.Portfolio) }}
             id="portfolio"
             transition={{ duration: 0.5 }}
             viewport={{ once: true, amount: 0.1 }}
@@ -36,7 +44,6 @@ export default function Portfolio() {
             className="mt-10 h-[300px] w-full overflow-x-auto overflow-y-hidden"
             initial="hidden"
             whileInView="visible"
-            id="portfolio"
             transition={{ duration: 0.5 }}
             viewport={{ once: true, amount: 0.1 }}
             variants={{

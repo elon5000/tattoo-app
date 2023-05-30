@@ -42,7 +42,7 @@ export default function Benefits({ setSelectedPage }: Props) {
     ]
 
     return <motion.section
-        id="benefits"
+        id={SelectedPage.Benefits}
         className="card"
         onViewportEnter={() => { setSelectedPage(SelectedPage.Benefits) }}
     >

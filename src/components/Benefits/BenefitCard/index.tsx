@@ -9,7 +9,7 @@ type Props = {
     benefit: Benefit
 }
 
-const cardStyles = 'flex flex-col rounded-md items-center py-12 px-8 border-2 border-solid border-secondary-500'
+const cardStyles = 'flex flex-col rounded-lg items-center py-12 px-8 border-2 border-solid border-secondary-500'
 
 export default function BenefitCard({ benefit }: Props) {
     return <motion.li

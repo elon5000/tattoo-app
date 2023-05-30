@@ -4,12 +4,12 @@ import { useState, useEffect } from 'react'
 // * Cmps
 import Home from '@/components/Home'
 import Benefits from '@/components/Benefits'
-import ContactUs from './components/ContactUs'
+import ContactUs from '@/components/ContactUs'
 import Portfolio from '@/components/Portfolio'
 import MainHeader from '@/components/MainHeader'
 
 // * Types
-import { SelectedPage } from './shared/types'
+import { SelectedPage } from '@/shared/types'
 
 export default function App() {
 
@@ -36,15 +36,10 @@ export default function App() {
       setSelectedPage={setSelectedPage}
       setIsMainNavOpen={setIsMainNavOpen}
     />
-    <Home
-      selectedPage={selectedPage}
-      setSelectedPage={setSelectedPage}
-    />
-    <Benefits
-      setSelectedPage={setSelectedPage}
-    />
-    <Portfolio />
-    <ContactUs />
+    <Home selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+    <Benefits setSelectedPage={setSelectedPage} />
+    <Portfolio setSelectedPage={setSelectedPage} />
+    <ContactUs setSelectedPage={setSelectedPage} />
   </div>
 }
 

@@ -30,7 +30,7 @@ export default function Home({ setSelectedPage, selectedPage }: Props) {
     const imgStyles = `object-contain ${isAboveMediumScreens ? 'max-w-[600px]' : 'w-full'}`
     return <section
         className={sectionStyles}
-        id="home">
+        id={SelectedPage.Home}>
         <motion.div
             initial="hidden"
             whileInView="visible"
