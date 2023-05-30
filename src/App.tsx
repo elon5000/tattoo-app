@@ -3,8 +3,9 @@ import { useState, useEffect } from 'react'
 
 // * Cmps
 import Home from '@/components/Home'
-import Flashes from '@/components/Flashes'
 import Benefits from '@/components/Benefits'
+import ContactUs from './components/ContactUs'
+import Portfolio from '@/components/Portfolio'
 import MainHeader from '@/components/MainHeader'
 
 // * Types
@@ -42,7 +43,8 @@ export default function App() {
     <Benefits
       setSelectedPage={setSelectedPage}
     />
-    <Flashes />
+    <Portfolio />
+    <ContactUs />
   </div>
 }
 

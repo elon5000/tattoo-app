@@ -4,7 +4,7 @@ import BenefitCard from './BenefitCard'
 import ActionButton from '../ActionButton'
 
 // * Images
-import Rose from '@/assets/Rose.png'
+import Sailor from '@/assets/Sailor.png'
 import Snake from '@/assets/Snake.png'
 import Mom from '@/assets/Mom.png'
 
@@ -56,15 +56,15 @@ export default function Benefits({ setSelectedPage }: Props) {
                 hidden: { opacity: 0, x: -60 },
                 visible: { opacity: 1, x: 0 }
             }}>
-            <h3 className="header-title">More than just a tattoo</h3>
-            <p className="card-paragraph">Koolkat Tattoo Shop offers versatile tattoo services. Choose a custom design, pick from our pre-made flashes, or bring your own idea. With international acclaim and vast experience, particularly in Europe, Koolkat ensures your unique vision comes to life on your skin.</p>
+            <h3 className="header-title pb-4">More than just a tattoo</h3>
+            <p className="card-paragraph pb-2">Koolkat Tattoo Shop offers versatile tattoo services. Choose a custom design, pick from our pre-made flashes, or bring your own idea. With international acclaim and vast experience, particularly in Europe, Koolkat ensures your unique vision comes to life on your skin.</p>
             <ul className="flex flex-col md:flex-row gap-8 mb-16">
                 {benefits.map((benefit, idx) => <BenefitCard key={idx} benefit={benefit} />)}
             </ul>
         </motion.div>
 
         <motion.div
-            className="flex-between flex-col gap-12 md:flex-row"
+            className="flex-between flex-col gap-14 md:flex-row"
             initial="hidden"
             whileInView="visible"
             transition={{ duration: 0.5 }}
@@ -75,14 +75,14 @@ export default function Benefits({ setSelectedPage }: Props) {
             }}
         >
             <img
-                className="w-full max-w-[480px] h-fit md:max-w-[50%]"
-                src={Rose}
-                alt="Rose graphics" />
+                className="w-full max-w-[400px] h-fit md:w-full md:max-w-[480px]"
+                src={Sailor}
+                alt="Sailor graphics" />
             <div className="flex flex-col gap-10">
                 <div className="flex flex-col gap-6">
                     <h3 className="relative font-extrabold uppercase text-3xl cursor-default">
                         Hundreds of customers getting <span className="text-red-100">inked</span>.
-                        <img className="absolute bottom-[64%] hidden md:block left-12 rotate-90 max-w-[2.2vw]" src={Snake} alt="Snake graphics" />
+                        {/* <img className="absolute bottom-[64%] hidden md:block left-12 rotate-90 max-w-[2.2vw]" src={Snake} alt="Snake graphics" /> */}
                     </h3>
                     <p className="font-bold text-lg cursor-default">
                         Embrace the benefits of choosing Koolkat's Tattoo Shop. Revel in the fusion of traditional tattoos and edgy street art, guided by Koolkat's experienced hand. With a legacy of hundreds of satisfied customers, your trust in us turns into bold, unique, and inspiring ink stories. Here, we don't just ink skin - we honor your journey. Dive into the Koolkat experience, where our customer is the canvas of our artistry!
@@ -105,7 +105,7 @@ export default function Benefits({ setSelectedPage }: Props) {
                         value={SelectedPage.ContactUs}
                         setSelectedPage={setSelectedPage}
                     />
-                    <img src={Mom} className="absolute -top-[60%] left-[116%] max-w-[68%]" alt="Dagger graphic" />
+                    {/* <img src={Mom} className="absolute -top-[60%] left-[116%] max-w-[68%]" alt="Dagger graphic" /> */}
                 </motion.div>
             </div>
         </motion.div>

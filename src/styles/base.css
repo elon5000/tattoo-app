@@ -10,16 +10,16 @@ body,
 }
 
 body {
-  @apply bg-gray-20
+  @apply bg-gray-20;
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+  width: 1px;
+    height: 6px;
   }
   
   ::-webkit-scrollbar-thumb {
-    background: rgba(90, 90, 90);
+    @apply bg-gray-20;
   }
   
   ::-webkit-scrollbar-track {
