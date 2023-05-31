@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 
 // * Cmps
 import Home from '@/components/Home'
+import Footer from '@/components/Footer'
 import Benefits from '@/components/Benefits'
 import ContactUs from '@/components/ContactUs'
 import Portfolio from '@/components/Portfolio'
@@ -40,6 +41,7 @@ export default function App() {
     <Benefits setSelectedPage={setSelectedPage} />
     <Portfolio setSelectedPage={setSelectedPage} />
     <ContactUs setSelectedPage={setSelectedPage} />
+    <Footer />
   </div>
 }
 

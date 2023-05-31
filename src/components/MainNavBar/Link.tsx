@@ -12,7 +12,7 @@ type Props = {
 export function Link({ pageName, selectedPage, setSelectedPage }: Props) {
 
     const pageRouteStr = pageName.replace(/ /g, "") as SelectedPage
-    const fontStyle = (selectedPage === pageName) ? 'text-red-100' : 'text-gray-200'
+    const fontStyle = (selectedPage === pageName.replace(/ +/g, "")) ? 'text-red-100' : 'text-gray-200'
     const linkStyles = `${fontStyle} py-2 transition font-bold duration-100 hover:text-red-100 capitalize cursor-pointer`
 
     return <AnchorLink

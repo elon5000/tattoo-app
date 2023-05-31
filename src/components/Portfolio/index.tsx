@@ -21,7 +21,7 @@ export default function Portfolio({ setSelectedPage } : Props) {
 
     const imgs: string[] = [Sailor, HomePageGraphic, Sailor, HomePageGraphic, Sailor, HomePageGraphic, Sailor, HomePageGraphic]
 
-    return <section className="min-h-full py-14 w-full bg-gray-500-trans flex my-14 flex-col gap-10">
+    return <section className="min-h-full pt-14 w-full bg-gray-500-trans flex my-14 flex-col gap-10">
         <motion.div
             className="main-layout flex flex-col gap-6 text-gray-20"
             initial="hidden"
@@ -41,7 +41,7 @@ export default function Portfolio({ setSelectedPage } : Props) {
             </p>
         </motion.div>
         <motion.div
-            className="mt-10 h-[300px] w-full overflow-x-auto overflow-y-hidden"
+            className="mt-10 h-[280px] w-full overflow-x-auto overflow-y-hidden"
             initial="hidden"
             whileInView="visible"
             transition={{ duration: 0.5 }}

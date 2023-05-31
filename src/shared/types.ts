@@ -8,6 +8,13 @@ export enum SelectedPage {
   Login = 'login',
 }
 
+export type Form = {
+  name: string
+  email: string
+  mobile: string
+  message: string
+}
+
 export type Benefit = {
   svg: React.ReactElement
   title: string
