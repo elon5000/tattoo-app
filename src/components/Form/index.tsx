@@ -36,11 +36,11 @@ export default function Form({ setIsFormSubmitted }: Props) {
 
     function onHandleChange({ target }: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
         const { name: field, value } = target
+        setForm((prevForm) => ({ ...prevForm, [field]: value }))
         if (field === 'name') setIsNameValid(formService.validateName(value))
         else if (field === 'email') setIsEmailValid(formService.validateEmail(value))
         else if (field === 'mobile') setIsMobileValid(formService.validateMobile(value))
-        setForm((prevForm) => ({ ...prevForm, [field]: value }))
-        setIsPristineMap((prevIsPristineMap)=> ({ ...prevIsPristineMap, [field]: false }))
+        setIsPristineMap((prevIsPristineMap) => ({ ...prevIsPristineMap, [field]: false }))
     }
 
     function checkDisabled() {
@@ -62,14 +62,12 @@ export default function Form({ setIsFormSubmitted }: Props) {
 
     const submitBtnStyles = 'mt-3 disabled:cursor-not-allowed font-bold uppercase text-2xl disabled:bg-gray-100 bg-primary-500 text-gray-20 hover:bg-red-100 w-[220px] p-2 rounded-lg'
 
-    // const adminEmailAddress = '6eb2b4a76f3bc042750ee195cc035dc2'
-
     return <form
         onSubmit={onHandleSubmit}
-        className="flex flex-col items-center gap-4 max-w-[520px]"
+        className="flex flex-1 flex-col items-center gap-4"
     >
         <div className="form-input-container">
-            {(!isNameValid && !isPristineMap.name ) && <p className="invalid-input-warning">*Required</p>}
+            {(!isNameValid && !isPristineMap.name) && <p className="invalid-input-warning">*Required</p>}
             <input
                 type="text"
                 name="name"
@@ -92,7 +90,7 @@ export default function Form({ setIsFormSubmitted }: Props) {
             />
         </div>
         <div className="form-input-container">
-            {(!isMobileValid && !isPristineMap.mobile ) && <p className="invalid-input-warning">*Please make sure your mobile is valid</p>}
+            {(!isMobileValid && !isPristineMap.mobile) && <p className="invalid-input-warning">*Please make sure your mobile is valid</p>}
             <input
                 type="tel"
                 name="mobile"
@@ -105,7 +103,7 @@ export default function Form({ setIsFormSubmitted }: Props) {
         </div>
         <textarea
             name="message"
-            className="form-input"
+            className="form-input max-w-[520px]"
             value={form.message}
             rows={6}
             placeholder="message"
