@@ -4,7 +4,7 @@ type Props = {
 }
 
 export default function ImgGallery({ imgs }: Props) {
-    return <ul className="flex gap-3 align-stretch">
+    return <ul className="flex gap-3 py-4 align-stretch">
         {imgs.map((imgUrl, idx) => {
             return <li className="px-4 min-w-[380px]" key={idx}>
                 <img

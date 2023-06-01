@@ -30,7 +30,7 @@ export default function Portfolio({ setSelectedPage } : Props) {
 
     const imgs: string[] = [CLIENT1, CLIENT2, CLIENT3, CLIENT4, CLIENT5, CLIENT6, CLIENT7, CLIENT8, CLIENT9, CLIENT10]
 
-    return <section className="min-h-full pt-14 w-full bg-gray-500-trans flex my-14 flex-col gap-10">
+    return <section className="min-h-full pt-14 w-full bg-gray-500-trans flex my-14 flex-col gap-6">
         <motion.div
             className="main-layout flex flex-col gap-6 text-gray-20"
             initial="hidden"
@@ -50,7 +50,7 @@ export default function Portfolio({ setSelectedPage } : Props) {
             </p>
         </motion.div>
         <motion.div
-            className="mt-4  w-full overflow-x-auto overflow-y-hidden"
+            className="mt-4 w-full overflow-x-auto overflow-y-hidden"
             initial="hidden"
             whileInView="visible"
             transition={{ duration: 0.5 }}
