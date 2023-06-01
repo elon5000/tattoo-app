@@ -5,11 +5,11 @@ import axios from 'axios'
 // * Types
 import { Form } from '@/shared/types'
 
-const API_KEY = 'f619ceafe0dd650b3f0b9c9d110b836b1f34372dab70127645350059b3c056d4'
+const ADMIN_EMAIL = 'dolevmeir22@gmail.com'
 
 async function postForm(form: Form) {
     try {
-        const url = `https://formsubmit.co/${API_KEY}`
+        const url = `https://formsubmit.co/${ADMIN_EMAIL}`
         await axios.post(url, form, {
             headers: {
                 Accept: 'application/json',

@@ -9,8 +9,17 @@ import { motion } from 'framer-motion'
 import { SelectedPage } from '@/shared/types'
 
 // * Assets
-import Sailor from '@/assets/Sailor.png'
-import HomePageGraphic from '@/assets/HomePageGraphic.png'
+import CLIENT1 from '@/assets/CLIENT1.jpeg'
+import CLIENT2 from '@/assets/CLIENT2.jpeg'
+import CLIENT3 from '@/assets/CLIENT3.jpeg'
+import CLIENT4 from '@/assets/CLIENT4.jpeg'
+import CLIENT5 from '@/assets/CLIENT5.jpeg'
+import CLIENT6 from '@/assets/CLIENT6.jpeg'
+import CLIENT7 from '@/assets/CLIENT7.jpeg'
+import CLIENT8 from '@/assets/CLIENT8.jpeg'
+import CLIENT9 from '@/assets/CLIENT9.jpeg'
+import CLIENT10 from '@/assets/CLIENT10.jpeg'
+
 
 type Props = {
     setSelectedPage: (value: SelectedPage) => void
@@ -19,7 +28,7 @@ type Props = {
 
 export default function Portfolio({ setSelectedPage } : Props) {
 
-    const imgs: string[] = [Sailor, HomePageGraphic, Sailor, HomePageGraphic, Sailor, HomePageGraphic, Sailor, HomePageGraphic]
+    const imgs: string[] = [CLIENT1, CLIENT2, CLIENT3, CLIENT4, CLIENT5, CLIENT6, CLIENT7, CLIENT8, CLIENT9, CLIENT10]
 
     return <section className="min-h-full pt-14 w-full bg-gray-500-trans flex my-14 flex-col gap-10">
         <motion.div
@@ -35,13 +44,13 @@ export default function Portfolio({ setSelectedPage } : Props) {
                 visible: { opacity: 1, x: 0 }
             }}
         >
-            <h3 className="card-title">Flashes and Artwork</h3>
+            <h3 className="card-title">Get old schooled among <span className="text-red-100">hundreds</span> of happy customers</h3>
             <p className="card-paragraph">
-                Discover Your Next Tattoo - Explore Koolkat's Diverse Flashes Today!
+                Be inspired by many of previous artworks on many costumers worldwide
             </p>
         </motion.div>
         <motion.div
-            className="mt-10 h-[280px] w-full overflow-x-auto overflow-y-hidden"
+            className="mt-4  w-full overflow-x-auto overflow-y-hidden"
             initial="hidden"
             whileInView="visible"
             transition={{ duration: 0.5 }}

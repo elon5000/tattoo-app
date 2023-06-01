@@ -1,9 +1,10 @@
 
 // * Hooks
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
 // * Modules
 import { formService } from '@/services/form.service'
+import { utilService } from '@/services/util.service'
 
 // * Types
 import { Form as FormType } from "@/shared/types"
@@ -34,13 +35,17 @@ export default function Form({ setIsFormSubmitted }: Props) {
 
     useEffect(checkDisabled, [form])
 
+    const debouncedSetIsEmailValid = useCallback(utilService.debounce(setIsEmailValid, 500), []);
+    const debouncedSetIsMobileValid = useCallback(utilService.debounce(setIsMobileValid, 500), []);
+    const debouncedSetIsPristineMap = useCallback(utilService.debounce(setIsPristineMap, 500), []);
+
     function onHandleChange({ target }: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
         const { name: field, value } = target
         setForm((prevForm) => ({ ...prevForm, [field]: value }))
         if (field === 'name') setIsNameValid(formService.validateName(value))
-        else if (field === 'email') setIsEmailValid(formService.validateEmail(value))
-        else if (field === 'mobile') setIsMobileValid(formService.validateMobile(value))
-        setIsPristineMap((prevIsPristineMap) => ({ ...prevIsPristineMap, [field]: false }))
+        else if (field === 'email') debouncedSetIsEmailValid(formService.validateEmail(value))
+        else if (field === 'mobile') debouncedSetIsMobileValid(formService.validateMobile(value))
+        debouncedSetIsPristineMap((prevIsPristineMap: IsPristineMap) => ({ ...prevIsPristineMap, [field]: false }))
     }
 
     function checkDisabled() {

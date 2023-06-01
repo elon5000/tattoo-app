@@ -4,13 +4,13 @@ type Props = {
 }
 
 export default function ImgGallery({ imgs }: Props) {
-    return <ul className="flex align-stretch h-[200px]">
+    return <ul className="flex gap-3 align-stretch">
         {imgs.map((imgUrl, idx) => {
-            return <li className="mx-2 min-w-[250px]" key={idx}>
+            return <li className="px-4 min-w-[380px]" key={idx}>
                 <img
                     src={imgUrl}
                     alt="Flash tattoo"
-                    className="object-contain h-full w-full"
+                    className="object-cover h-full rounded-xl w-full"
                 />
             </li>
         })}
