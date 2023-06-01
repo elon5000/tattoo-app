@@ -5,9 +5,7 @@ import ActionButton from '../ActionButton'
 
 // * Images
 import Sailor from '@/assets/Sailor.png'
-import Snake from '@/assets/Snake.png'
-import Mom from '@/assets/Mom.png'
-
+import Dagger from '@/assets/Dagger.png'
 // * Modules
 import { motion } from 'framer-motion'
 
@@ -82,14 +80,13 @@ export default function Benefits({ setSelectedPage }: Props) {
                 <div className="flex flex-col gap-6">
                     <h3 className="relative font-extrabold uppercase text-3xl cursor-default">
                         Hundreds of customers getting <span className="text-red-100">inked</span>.
-                        {/* <img className="absolute bottom-[64%] hidden md:block left-12 rotate-90 max-w-[2.2vw]" src={Snake} alt="Snake graphics" /> */}
                     </h3>
                     <p className="font-bold text-lg cursor-default">
                         Embrace the benefits of choosing Koolkat's Tattoo Shop. Revel in the fusion of traditional tattoos and edgy street art, guided by Koolkat's experienced hand. With a legacy of hundreds of satisfied customers, your trust in us turns into bold, unique, and inspiring ink stories. Here, we don't just ink skin - we honor your journey. Dive into the Koolkat experience, where our customer is the canvas of our artistry!
                     </p>
                 </div>
                 <motion.div
-                    className="relative w-fit py-2"
+                    className="w-full py-2 flex items-center justify-start gap-10"
                     initial="hidden"
                     whileInView="visible"
                     transition={{ duration: 0.5 }}
@@ -105,7 +102,7 @@ export default function Benefits({ setSelectedPage }: Props) {
                         value={SelectedPage.ContactUs}
                         setSelectedPage={setSelectedPage}
                     />
-                    {/* <img src={Mom} className="absolute -top-[60%] left-[116%] max-w-[68%]" alt="Dagger graphic" /> */}
+                    <img src={Dagger} className="rotate-45 relative -top-2 flex-[0.44] min-w-[110px] max-w-[200px]" alt="Dagger graphic" />
                 </motion.div>
             </div>
         </motion.div>

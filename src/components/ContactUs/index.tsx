@@ -48,7 +48,7 @@ export default function ContactUs({ setSelectedPage }: Props) {
             </p>
         </div>
         <motion.div
-            className="flex gap-10 flex-col md:flex-row"
+            className="flex gap-12 flex-col md:flex-row"
             initial="hidden"
             whileInView="visible"
             transition={{ duration: 0.5 }}
@@ -60,7 +60,7 @@ export default function ContactUs({ setSelectedPage }: Props) {
         >
             {!isFormSubmitted && <Form setIsFormSubmitted={setIsFormSubmitted} />}
             {isFormSubmitted && <h3 className="text-center py-6">Request has been sent successfully ✅</h3>}
-            <div className="flex justify-center flex-1">
+            <div className="flex justify-center md:justify-end flex-1">
                 <img src={Hulla} className="max-w-[200px] object-contain" alt="Contact us graphics" />
             </div>
         </motion.div>

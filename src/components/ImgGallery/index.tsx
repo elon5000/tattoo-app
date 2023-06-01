@@ -9,7 +9,7 @@ export default function ImgGallery({ imgs }: Props) {
             return <li className="px-4 min-w-[380px]" key={idx}>
                 <img
                     src={imgUrl}
-                    alt="Flash tattoo"
+                    alt="Costumer tattoo"
                     className="object-cover h-full rounded-xl w-full"
                 />
             </li>
